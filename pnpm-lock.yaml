@@ -501,70 +501,6 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(@types/node@18.19.31)
 
-  packages/actions:
-    dependencies:
-      astro-integration-kit:
-        specifier: ^0.11.0
-        version: 0.11.0(astro@packages+astro)
-      zod:
-        specifier: ^3.23.0
-        version: 3.23.0
-    devDependencies:
-      astro:
-        specifier: workspace:*
-        version: link:../astro
-      astro-scripts:
-        specifier: workspace:*
-        version: link:../../scripts
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-
-  packages/actions/test/fixtures/basics:
-    dependencies:
-      '@astrojs/actions':
-        specifier: workspace:*
-        version: link:../../..
-      '@astrojs/check':
-        specifier: ^0.5.10
-        version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
-      '@astrojs/db':
-        specifier: ^0.10.5
-        version: link:../../../../db
-      '@astrojs/mdx':
-        specifier: ^2.3.1
-        version: link:../../../../integrations/mdx
-      '@astrojs/node':
-        specifier: ^8.2.5
-        version: link:../../../../integrations/node
-      '@astrojs/react':
-        specifier: ^3.3.0
-        version: link:../../../../integrations/react
-      '@astrojs/rss':
-        specifier: ^4.0.5
-        version: link:../../../../astro-rss
-      '@astrojs/sitemap':
-        specifier: ^3.1.4
-        version: link:../../../../integrations/sitemap
-      '@types/react':
-        specifier: ^18.2.79
-        version: 18.2.79
-      '@types/react-dom':
-        specifier: ^18.2.25
-        version: 18.2.25
-      astro:
-        specifier: ^4.6.3
-        version: link:../../../../astro
-      react:
-        specifier: 18.3.0-canary-670811593-20240322
-        version: 18.3.0-canary-670811593-20240322
-      react-dom:
-        specifier: 18.3.0-canary-670811593-20240322
-        version: 18.3.0-canary-670811593-20240322(react@18.3.0-canary-670811593-20240322)
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-
   packages/astro:
     dependencies:
       '@astrojs/compiler':
@@ -609,6 +545,9 @@ importers:
       aria-query:
         specifier: ^5.3.0
         version: 5.3.0
+      astro-integration-kit:
+        specifier: ^0.11.0
+        version: 0.11.0
       axobject-query:
         specifier: ^4.0.0
         version: 4.0.0
@@ -1783,6 +1722,48 @@ importers:
       vue:
         specifier: ^3.3.8
         version: 3.4.21(typescript@5.4.5)
+
+  packages/astro/test/fixtures/actions-blog:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.5.10
+        version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
+      '@astrojs/db':
+        specifier: ^0.10.5
+        version: link:../../../../db
+      '@astrojs/mdx':
+        specifier: ^2.3.1
+        version: link:../../../../integrations/mdx
+      '@astrojs/node':
+        specifier: ^8.2.5
+        version: link:../../../../integrations/node
+      '@astrojs/react':
+        specifier: ^3.3.0
+        version: link:../../../../integrations/react
+      '@astrojs/rss':
+        specifier: ^4.0.5
+        version: link:../../../../astro-rss
+      '@astrojs/sitemap':
+        specifier: ^3.1.4
+        version: link:../../../../integrations/sitemap
+      '@types/react':
+        specifier: ^18.2.79
+        version: 18.2.79
+      '@types/react-dom':
+        specifier: ^18.2.25
+        version: 18.2.25
+      astro:
+        specifier: workspace:*
+        version: link:../../..
+      react:
+        specifier: 18.3.0-canary-670811593-20240322
+        version: 18.3.0-canary-670811593-20240322
+      react-dom:
+        specifier: 18.3.0-canary-670811593-20240322
+        version: 18.3.0-canary-670811593-20240322(react@18.3.0-canary-670811593-20240322)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
 
   packages/astro/test/fixtures/alias:
     dependencies:
@@ -9296,7 +9277,7 @@ packages:
       astro: link:packages/astro
     dev: false
 
-  /astro-integration-kit@0.11.0(astro@packages+astro):
+  /astro-integration-kit@0.11.0:
     resolution: {integrity: sha512-P41igJUY63W6iWq6Rtw0FnERVUdJhkpAa9jothRQ+AXl56B/6PMes/jcYPo3Zr6KwlMPT8TOHMoasHL0CfqglQ==}
     peerDependencies:
       '@astrojs/db': ^0.9.0
@@ -9326,7 +9307,6 @@ packages:
       vue:
         optional: true
     dependencies:
-      astro: link:packages/astro
       pathe: 1.1.2
       recast: 0.23.6
     dev: false
