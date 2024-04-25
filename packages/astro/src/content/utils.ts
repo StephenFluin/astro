@@ -19,7 +19,7 @@ import { isYAMLException } from '../core/errors/utils.js';
 import { CONTENT_FLAGS, CONTENT_TYPES_FILE, PROPAGATED_ASSET_FLAG } from './consts.js';
 import { errorMap } from './error-map.js';
 import { createImage } from './runtime-assets.js';
-import { ACTIONS_TYPES_FILE } from '#astro/actions/consts';
+import { ACTIONS_TYPES_FILE } from '../actions/consts.js';
 
 /**
  * Amap from a collection + slug to the local file path.
