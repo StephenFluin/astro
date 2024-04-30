@@ -10,7 +10,7 @@ import {
 } from 'drizzle-orm/sqlite-core';
 import type { DBColumn, DBTable } from '../core/types.js';
 import { type SerializedSQL, isSerializedSQL } from './types.js';
-import { pathToFileURL } from './utils.js';
+import { addTrailingSlash, pathToFileURL } from './utils.js';
 
 export type { Table } from './types.js';
 export { createRemoteDatabaseClient, createLocalDatabaseClient } from './db-client.js';
@@ -138,7 +138,7 @@ export function normalizeDatabaseUrl(envDbUrl: string | undefined, defaultDbUrl:
 		if (envDbUrl.startsWith('file://')) {
 			return envDbUrl;
 		}
-		return new URL(envDbUrl, pathToFileURL(process.cwd())).toString();
+		return new URL(envDbUrl, pathToFileURL(addTrailingSlash(process.cwd()))).href;
 	} else {
 		// This is going to be a file URL always,
 		return defaultDbUrl;
